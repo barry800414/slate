@@ -24,7 +24,7 @@ const CORE_SCHEMA_RULES = [
       if (!invalids.size) return
 
       return (change) => {
-        console.log('Only allow block nodes in documents:')
+        console.log('Slate-Core-Rule: Only allow block nodes in documents:')
         invalids.forEach((child) => {
           console.log(JSON.stringify(child))
           change.removeNodeByKey(child.key, { normalize: false })
@@ -49,7 +49,7 @@ const CORE_SCHEMA_RULES = [
       if (!invalids.size) return
 
       return (change) => {
-        console.log('Only allow block nodes or inline and text nodes in blocks:')
+        console.log('Slate-Core-Rule: Only allow block nodes or inline and text nodes in blocks:')
         invalids.forEach((child) => {
           console.log(JSON.stringify(child))
           change.removeNodeByKey(child.key, { normalize: false })
@@ -71,7 +71,7 @@ const CORE_SCHEMA_RULES = [
       if (!invalids.size) return
 
       return (change) => {
-        console.log('Only allow inline and text nodes in inlines.')
+        console.log('Slate-Core-Rule: Only allow inline and text nodes in inlines.')
         invalids.forEach((child) => {
           console.log(JSON.stringify(child))
           change.removeNodeByKey(child.key, { normalize: false })
@@ -152,7 +152,7 @@ const CORE_SCHEMA_RULES = [
           change.insertNodeByKey(node.key, 1, text, { normalize: false })
         }
 
-        console.log('Ensure that inline nodes are never empty.')
+        console.log('Slate-Core-Rule: Ensure that inline nodes are never empty.')
         invalids.forEach((child) => {
           console.log(JSON.stringify(child))
           change.removeNodeByKey(child.key, { normalize: false })
@@ -278,7 +278,7 @@ const CORE_SCHEMA_RULES = [
       if (!invalids.size) return
 
       return (change) => {
-        console.log('Prevent extra empty text nodes, except when adjacent to inline void nodes:')
+        console.log('Slate-Core-Rule: Prevent extra empty text nodes, except when adjacent to inline void nodes:')
         invalids.forEach((text) => {
           console.log(JSON.stringify(child))
           change.removeNodeByKey(text.key, { normalize: false })
