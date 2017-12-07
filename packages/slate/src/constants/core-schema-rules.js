@@ -117,9 +117,9 @@ const CORE_SCHEMA_RULES = [
         const index = node.nodes.size
 
         change.insertNodeByKey(node.key, index, text, { normalize: false })
-        console.log('Ensure that void nodes contain a text node with a single space of text.')
+        // console.log('Ensure that void nodes contain a text node with a single space of text.')
         node.nodes.forEach((child) => {
-          console.log(JSON.stringify(child))
+          // console.log(JSON.stringify(child))
           change.removeNodeByKey(child.key, { normalize: false })
         })
       }
