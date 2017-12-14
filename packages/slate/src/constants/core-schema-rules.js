@@ -152,9 +152,9 @@ const CORE_SCHEMA_RULES = [
           change.insertNodeByKey(node.key, 1, text, { normalize: false })
         }
 
-        console.log('Slate-Core-Rule: Ensure that inline nodes are never empty.')
+        // console.log('Slate-Core-Rule: Ensure that inline nodes are never empty.')
         invalids.forEach((child) => {
-          console.log(JSON.stringify(child))
+          // console.log(JSON.stringify(child))
           change.removeNodeByKey(child.key, { normalize: false })
         })
       }
